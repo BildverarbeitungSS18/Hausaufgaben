@@ -24,6 +24,7 @@ cat << EOF > $out
 FROM ubuntu:16.04
 
 RUN  apt-get update && apt-get install -y zsh \\
+                     locales \\
                      vim \\
                      tmux \\
                      git \\
@@ -46,8 +47,8 @@ RUN  apt-get update && apt-get install -y zsh \\
 ENV LC_ALL en_US.UTF-8
 RUN locale-gen en_US.UTF-8
 
+RUN pip install --upgrade pip
 RUN pip3 install jupyter scikit-image ipykernel
-RUN pip install jupyter scikit-image ipykernel
 
 RUN ipython3 kernel install
 RUN ipython kernel install
@@ -71,7 +72,7 @@ RUN echo $username:$password | chpasswd && \\
 RUN mkdir -p /home/$username && chown -R $username:$username /home/$username
 
 USER $username
-WORKDIR /home/$username'
+WORKDIR /home/$username
 
 RUN echo "PATH=$PATH:/usr/local/bin:~/.local/bin/" > /home/$username/.bashrc
 
@@ -79,5 +80,5 @@ CMD ["sh", "-c", "jupyter notebook --ip 0.0.0.0"]
 EOF
 
 if [ "$1" != "sample" ]; then
-    docker build -t 'image_processing_ss16' .
+    docker build -t 'image_processing_ss18' .
 fi

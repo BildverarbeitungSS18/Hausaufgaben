@@ -14,8 +14,8 @@ else
         -p $PORT:$PORT \
         -v `pwd`:/home/$username/image_processing \
         -d \
-        --name image_processing_ss16_container \
-        image_processing_ss16"
+        --name image_processing_ss18_container \
+        image_processing_ss18"
     echo "$CMD"
     $CMD
 fi
