@@ -51,8 +51,8 @@ To get the latest assignments into your repository see [how to sync a fork](http
 Paste a link to your repository into the kvv assignment box.
 Make sure that I have read and write rights on your repository.
 
-Please give us read access to your repository. My github is 'garlicpasta' 
-and fu gitlab is 'jakobkrause'.
+Please give us read access to your repository. Add 'garlicpasta' and 'BildverarbeitungSS18' on github
+or 'jakobkrause' as well as 'nbobenko' on fu gitlab.
 
 ## Docker
 
